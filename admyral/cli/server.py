@@ -104,6 +104,7 @@ def up() -> None:
     env["POSTGRES_VOLUME_PATH"] = get_local_postgres_volume()
 
     env["ADMYRAL_VERSION"] = __version__
+    env["ADMYRAL_DISABLE_AUTH"] = "true"
 
     click.echo("\nStarting Admyral...\n")
 
@@ -138,6 +139,7 @@ def down() -> None:
     env = os.environ.copy()
     env["POSTGRES_VOLUME_PATH"] = get_local_postgres_volume()
     env["ADMYRAL_VERSION"] = __version__
+    env["ADMYRAL_DISABLE_AUTH"] = "true"
 
     click.echo("\nShutting Admyral down...\n")
 
